@@ -1,83 +1,58 @@
-<div class="navbar-collapse collapse inverse" id="navbar-header">
-      <div class="container-fluid">
-        <div class="about">
-          <h4>Welcome to Cactus On Rails!</h4>
-          <p class="text-muted">This promises to be the best cacti and succulent cataloguing system you have ever used! You could say, this is the cacti and succulent database of your dreams!</p>
-        </div>
-        <div class="social">
-          <h4>Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Follow on Twitter</a></li>
-            <li><a href="#">Like on Facebook</a></li>
-            <li><a href="#">Email me</a></li>
-          </ul>
-        </div>
+<section class="jumbotron text-xs-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Cactus on Rails!</h1>
+    <%= image_tag("happy_cactus.jpg") %>
+    <p class="lead text-muted">Here's a random selection of your stored plant images...</p>
+    <p>
+      <%= link_to "Build My Cactus on Rails!", plants_path, class: "btn btn-primary" %>
+      <%= link_to "View more random plants", root_path, class: "btn btn-secondary" %>
+    </p>
+  </div>
+</section>
+
+<div class="album text-muted">
+  <div class="container">
+
+    <div class="row">
+      <div class="card">
+        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card">
+        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card">
+        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+
+      <div class="card">
+        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card">
+        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card">
+        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+
+      <div class="card">
+        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card">
+        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card">
+        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
     </div>
-    <div class="navbar navbar-static-top navbar-dark bg-inverse">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
-          &#9776;
-        </button>
-        <a href="#" class="navbar-brand">Cactus on Rails</a>
-      </div>
-    </div>
 
-    <section class="jumbotron text-xs-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Cactus on Rails!</h1>
-        <%= image_tag("happy_cactus.jpg") %>
-        <p class="lead text-muted">Here's a random selection of your stored plant images...</p>
-        <p>
-          <a href="#" class="btn btn-primary">Build My Cactus on Rails!</a>
-          <a href="#" class="btn btn-secondary">View more random plants</a>
-        </p>
-      </div>
-    </section>
-
-    <div class="album text-muted">
-      <div class="container">
-
-        <div class="row">
-          <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-
-          <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-
-          <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<section class="jumbotron text-xs-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Cactus on Rails!</h1>
+    <%= image_tag("happy_cactus.jpg") %>
+    <p class="lead text-muted">Add a new plant</p>
+    <p>
+      <a href="#" class="btn btn-primary">Add New Plants</a>
+      <%= link_to "View more random plants", root_path, class: "btn btn-secondary" %>
+    </p>
+  </div>
+</section>
+
+<div class="album text-muted">
+  <div class="container">
+
+    <%= form_for :plant, url: plants_path do |f| %>
+      <p>
+        <%= f.label :type %><br>
+        <%= select_tag(:type, options_for_select([['Cactus', 'Cactus'], ['Succulent', 'Succulent']])) %>
+      </p>
+
+      <p>
+        <%= f.label :genus %><br>
+        <%= f.text_field :genus %>
+      </p>
+
+      <p>
+        <%= f.label :species %><br>
+        <%= f.text_field :species %>
+      </p>
+
+      <p>
+        <%= f.label :common_name %><br>
+        <%= f.text_field :common_name %>
+      </p>
+
+      <p>
+        <%= f.label :grown_from_seed %><br>
+        <%= check_box_tag(:grown_from_seed) %>
+      </p>
+
+      <p>
+        <%= f.label :notes %><br>
+        <%= f.text_area :notes %>
+      </p>
+     
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+
+  </div>
+</div>

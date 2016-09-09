@@ -3,12 +3,27 @@
   <head>
     <title>CactusOnRails</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  	<div class="navbar-collapse collapse inverse" id="navbar-header">
+      <div class="container-fluid">
+        <div class="about">
+          <h4>Welcome to Cactus On Rails!</h4>
+          <p class="text-muted">This promises to be the best cacti and succulent cataloguing system you have ever used! You could say, this is the cacti and succulent database of your dreams!</p>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-static-top navbar-dark bg-inverse">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
+          &#9776;
+        </button>
+        <a href="#" class="navbar-brand">Cactus on Rails</a>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

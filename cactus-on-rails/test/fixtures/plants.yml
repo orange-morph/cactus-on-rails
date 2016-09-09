@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  genus: MyString
+  species: MyString
+  type: 
+  common_name: MyString
+  notes: MyText
+
+two:
+  genus: MyString
+  species: MyString
+  type: 
+  common_name: MyString
+  notes: MyText
