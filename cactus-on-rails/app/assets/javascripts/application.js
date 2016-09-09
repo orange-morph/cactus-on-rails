@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require holder
+//= require jquery.datatables.min
 //= require init
 //= require_tree .

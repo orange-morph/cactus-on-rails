@@ -37,5 +37,32 @@
       <% end %>
     </div>
 
+    <table id="plants">
+      <thead>
+        <th>Plant Type</th>
+        <th>Genus</th>
+        <th>Species</th>
+        <th>Common Name</th>
+      </thead>
+      <tbody>
+        <% @plants.each do |plant| %>
+        <tr>
+          <td>
+            <%= plant.plant_type %>
+          </td>
+          <td>
+            <%= plant.genus %>
+          </td>
+          <td>
+            <%= plant.species %>
+          </td>
+          <td>
+            <%= plant.common_name %>
+          </td>
+        </tr>
+        <% end %> 
+      </tbody>
+    </table>
+
   </div>
 </div>
