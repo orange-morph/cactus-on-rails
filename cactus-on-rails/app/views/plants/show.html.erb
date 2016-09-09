@@ -1,0 +1,49 @@
+<section class="jumbotron text-xs-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Cactus on Rails!</h1>
+    <%= image_tag("happy_cactus.jpg") %>
+    <p class="lead text-muted">Plant Details</p>
+    <p>
+      <%= link_to "Add New Plants", new_plant_path, class: "btn btn-primary" %>
+      <%= link_to "View my Plants", plants_path, class: "btn btn-secondary" %>
+    </p>
+  </div>
+</section>
+
+<div class="album text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="card">
+        <img data-src="holder.js/100px280/thumb" alt="Plant image">
+        <p class="card-text">
+          Plant Type: 
+          <%= @plant.plant_type %>
+        </p>
+
+        <p class="card-text">
+          Genus:
+          <%= @plant.genus %>
+        </p>
+
+        <p class="card-text">
+          Species:
+          <%= @plant.species %>
+        </p>
+
+        <p class="card-text">
+          Common Name:
+          <%= @plant.common_name %>
+        </p>
+
+        <p class="card-text">
+          Grown from seed?
+          <%= @plant.grown_from_seed ? 'Yes' : 'No' %>
+        </p>
+
+        <p class="card-text">
+          Notes:
+          <%= @plant.notes %>
+        </p>
+
+  </div>
+</div>

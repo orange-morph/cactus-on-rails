@@ -4,8 +4,8 @@
     <%= image_tag("happy_cactus.jpg") %>
     <p class="lead text-muted">Add a new plant</p>
     <p>
-      <a href="#" class="btn btn-primary">Add New Plants</a>
-      <%= link_to "View more random plants", root_path, class: "btn btn-secondary" %>
+      <%= link_to "View my Plants", plants_path, class: "btn btn-primary" %>
+      <%= link_to "Add New Plants", new_plant_path, class: "btn btn-secondary" %>
     </p>
   </div>
 </section>
@@ -14,10 +14,15 @@
   <div class="container">
 
     <%= form_for :plant, url: plants_path do |f| %>
-      <p>
-        <%= f.label :type %><br>
-        <%= select_tag(:type, options_for_select([['Cactus', 'Cactus'], ['Succulent', 'Succulent']])) %>
-      </p>
+      <div class="form-group">
+        <div class="col-sm-3">
+          <%= f.label :plant_type %><br>
+          <%= f.select(:plant_type, [['Cactus', 'Cactus'], ['Succulent', 'Succulent']], {}, { :class => 'form-control' }) %>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+      <br>
 
       <p>
         <%= f.label :genus %><br>
@@ -34,10 +39,10 @@
         <%= f.text_field :common_name %>
       </p>
 
-      <p>
+      <div class="checkbox">
         <%= f.label :grown_from_seed %><br>
         <%= check_box_tag(:grown_from_seed) %>
-      </p>
+      </div>
 
       <p>
         <%= f.label :notes %><br>

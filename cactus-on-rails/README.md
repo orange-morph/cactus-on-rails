@@ -4,7 +4,7 @@ The only cactus and succulent database you'll ever need.
 
 Installation and deployment notes:
 
-* Ruby 2.2 required, MySqlite3 required
+* Ruby 2.2 required, MySqlite3 required, built in Rails 5
 
 * Ruby / Rails installation - on windows use the Ruby Installer / Rails installer (will install git and mysqlite3 if required)
 * then gem install bundler

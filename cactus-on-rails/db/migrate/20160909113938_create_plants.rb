@@ -1,7 +1,7 @@
 class CreatePlants < ActiveRecord::Migration[5.0]
   def change
     create_table :plants do |t|
-      t.string :type
+      t.string :plant_type
       t.string :genus
       t.string :species
       t.string :common_name

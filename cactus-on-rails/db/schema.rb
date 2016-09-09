@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20160909113938) do
 
   create_table "plants", force: :cascade do |t|
-    t.string   "type"
+    t.string   "plant_type"
     t.string   "genus"
     t.string   "species"
     t.string   "common_name"
