@@ -1,24 +1,19 @@
-# README
+# CACTUS ON RAILS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The only cactus and succulent database you'll ever need.
 
-Things you may want to cover:
+Installation and deployment notes:
 
-* Ruby version
+* Ruby 2.2 required, MySqlite3 required
 
-* System dependencies
+* Ruby / Rails installation - on windows use the Ruby Installer / Rails installer (will install git and mysqlite3 if required)
+* then gem install bundler
+* then gem install rails
 
-* Configuration
+* System dependencies - developed for windows
+* run bundle install
 
-* Database creation
+* Database creation - run ruby bin/rails db:migrate
 
-* Database initialization
+* Deployment instructions - on windows, run ruby bin/rails server and access at localhost:3000
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
