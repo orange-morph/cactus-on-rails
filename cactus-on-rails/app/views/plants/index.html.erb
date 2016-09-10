@@ -13,30 +13,6 @@
 <div class="album text-muted">
   <div class="container">
 
-    <div class="row">
-      <% @plants.each do |plant| %>
-        <%= link_to plant do %>
-          <div class="card">
-            <img data-src="holder.js/100px280/thumb" alt="Plant image">
-            <p class="card-text">
-              Plant Type: 
-              <%= plant.plant_type %>
-            </p>
-            <p class="card-text">
-              Genus:
-              <%= plant.genus %>
-              Species:
-              <%= plant.species %>
-            </p>
-            <p class="card-text">
-              Common Name:
-              <%= plant.common_name %>
-            </p>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-
     <table id="plants">
       <thead>
         <th>Plant Type</th>
@@ -48,21 +24,45 @@
         <% @plants.each do |plant| %>
         <tr>
           <td>
-            <%= plant.plant_type %>
+            <%= link_to plant do plant.plant_type end %>
           </td>
           <td>
-            <%= plant.genus %>
+            <%= link_to plant do plant.genus end %>
           </td>
           <td>
-            <%= plant.species %>
+            <%= link_to plant do plant.species end %>
           </td>
           <td>
-            <%= plant.common_name %>
+            <%= link_to plant do plant.common_name end %>
           </td>
         </tr>
         <% end %> 
       </tbody>
     </table>
+
+    <div class="row">
+      <% @plants.each do |plant| %>
+          <%= link_to plant do %>
+              <div class="card">
+                <img data-src="holder.js/100px280/thumb" alt="Plant image">
+                <p class="card-text">
+                  Plant Type:
+                  <%= plant.plant_type %>
+                </p>
+                <p class="card-text">
+                  Genus:
+                  <%= plant.genus %>
+                  Species:
+                  <%= plant.species %>
+                </p>
+                <p class="card-text">
+                  Common Name:
+                  <%= plant.common_name %>
+                </p>
+              </div>
+          <% end %>
+      <% end %>
+    </div>
 
   </div>
 </div>

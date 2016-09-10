@@ -12,8 +12,11 @@ Installation and deployment notes:
 
 * System dependencies - developed for windows
 * run bundle install
+* NodeJs required - use the NodeJs installer and restart machine
 
-* Database creation - run ruby bin/rails db:migrate
+* Database creation - run ruby bin/rails db:schema:load or ruby bin/rails db:migrate 
+
+* Assets precompile - may be required to do rake assets:precompile for datatables images
 
 * Deployment instructions - on windows, run ruby bin/rails server and access at localhost:3000
 
