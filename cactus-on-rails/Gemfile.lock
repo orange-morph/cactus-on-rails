@@ -60,6 +60,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
+    fancybox-rails (0.3.1)
+      railties (>= 3.1.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     holder_rails (2.9.3)
@@ -160,10 +162,11 @@ DEPENDENCIES
   byebug
   carrierwave!
   coffee-rails (~> 4.2)
+  fancybox-rails
   holder_rails
   jbuilder (~> 2.5)
   jquery-rails
-  mini_magick (~> 4.3)
+  mini_magick
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   sass-rails (~> 5.0)

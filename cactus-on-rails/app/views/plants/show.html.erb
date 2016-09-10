@@ -14,44 +14,48 @@
   <div class="container">
     <div class="row">
       <div class="card">
-        <img data-src="holder.js/100px280/thumb" alt="Plant image">
         <p class="card-text">
           Plant Type: 
           <%= @plant.plant_type %>
         </p>
-
         <p class="card-text">
           Genus:
           <%= @plant.genus %>
         </p>
-
         <p class="card-text">
           Species:
           <%= @plant.species %>
         </p>
-
         <p class="card-text">
           Common Name:
           <%= @plant.common_name %>
         </p>
-
         <p class="card-text">
           Grown from seed?
           <%= @plant.grown_from_seed ? 'Yes' : 'No' %>
         </p>
-
         <p class="card-text">
           Notes:
           <%= @plant.notes %>
         </p>
+    </div>
+    <div class="clearfix"></div>
 
-        <% @plant.plant_images.each do |plant_image| %>
-          <p class="card-text">
-            Image:
-            <%= image_tag(plant_image.image_upload.url) %>
-          </p>
-        <% end %>
+    <% if !@plant.plant_images.empty? %>
 
+      <div class="row">
+          <h4>PLANT IMAGES</h4>
+          <% @plant.plant_images.each do |plant_image| %>
+            <div class="card">
+              <p class="card-text">
+                <%= link_to image_tag(plant_image.image_upload.url(:mid)), plant_image.image_upload.url, { :class => "galleried-elements", :title=> plant_image.get_display_title, :rel => "zomg_awesome_images" } %>
+                (click to view full size)
+              </p>
+            </div>
+          <% end %>
+      </div>
+
+    <% end %>
 
   </div>
 </div>

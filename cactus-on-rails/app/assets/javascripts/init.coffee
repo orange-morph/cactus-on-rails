@@ -14,3 +14,17 @@ $(document).bind 'turbolinks:load', ->
       }
     }
   )
+  $('a.galleried-elements').fancybox(
+    {
+      'transitionIn'  :   'elastic',
+      'transitionOut' :   'elastic',
+      'speedIn'       :   600,
+      'speedOut'      :   200,
+      'overlayShow'   :   true,
+      'autoDimensions':   false,
+      'autoScale'     :   false,
+      'titlePosition' :   'inside'
+  }
+
+  )
+

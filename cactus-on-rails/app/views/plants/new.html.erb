@@ -52,7 +52,7 @@
       <p>
         <%= f.fields_for :plant_images do |plant_image| %>
             <%= plant_image.label :image_upload %><br>
-            <%= plant_image.file_field :image_upload, :multiple => true %>
+            <%= plant_image.file_field :image_upload %>
         <% end %>
       </p>
      

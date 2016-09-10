@@ -42,7 +42,7 @@
                 <%=  'no image found' %>
             <% elsif plant.plant_images.first && plant.plant_images.first.image_upload && plant.plant_images.first.image_upload.url %>
                 <%= link_to plant do %>
-                  <%= image_tag(plant.plant_images.first.image_upload.url) %>
+                  <%= image_tag(plant.plant_images.first.image_upload.url(:thumb)) %>
                 <% end %>
             <% else %>
                 <img data-src="holder.js/50px50/thumb" alt="Plant image">
@@ -58,7 +58,15 @@
       <% @plants.each do |plant| %>
           <%= link_to plant do %>
               <div class="card">
-                <img data-src="holder.js/100px280/thumb" alt="Plant image">
+                <% if plant.plant_images.empty? %>
+                    <img data-src="holder.js/100px280/thumb" alt="Plant image">
+                <% elsif plant.plant_images.first && plant.plant_images.first.image_upload && plant.plant_images.first.image_upload.url %>
+                    <%= link_to plant do %>
+                        <%= image_tag(plant.plant_images.first.image_upload.url(:mid)) %>
+                    <% end %>
+                <% else %>
+                    <img data-src="holder.js/100px280/thumb" alt="Plant image">
+                <% end %>
                 <p class="card-text">
                   Plant Type:
                   <%= plant.plant_type %>

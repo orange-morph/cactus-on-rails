@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require holder
 //= require jquery.datatables.min
+//= require fancybox
 //= require init
 //= require_tree .

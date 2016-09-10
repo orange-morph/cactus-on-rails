@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20160910030116) do
     t.text     "notes"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.         "plant_images"
   end
 
 end
