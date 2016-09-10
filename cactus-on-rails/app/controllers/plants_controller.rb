@@ -1,7 +1,7 @@
 class PlantsController < ApplicationController
 
 	def index
-		@plants = Plant.all
+		@plants = Plant.includes(:plant_images)
 	end
 
 	def show
@@ -9,19 +9,34 @@ class PlantsController < ApplicationController
 	end
 
 	def new
-  	end
+		@plant = Plant.new
+		@plant.plant_images.build
+	end
 
-  	def create
-  		@plant = Plant.new(params.require(:plant).permit(:plant_type, :genus, :species, :common_name, :grown_from_seed, :notes))
-  		@plant.save
-  		redirect_to @plant
-  	end
+	def create
+    @plant = Plant.new(plant_params)
+    @plant.save!
+		redirect_to @plant
+	end
 
-  	def edit
-  	end
+	def edit
+	end
 
-  	def delete
-  	end
+	def delete
+	end
 
+  private def plant_params
+    params.require(:plant).permit(
+        :id,
+        :plant_type,
+        :genus,
+        :species,
+        :common_name,
+        :grown_from_seed,
+        :notes,
+        plant_images: [],
+        plant_images_attributes: [:id, :plant_id, :image_upload]
+    )
+  end
 
 end

@@ -19,6 +19,7 @@
         <th>Genus</th>
         <th>Species</th>
         <th>Common Name</th>
+        <th>Images</th>
       </thead>
       <tbody>
         <% @plants.each do |plant| %>
@@ -34,6 +35,19 @@
           </td>
           <td>
             <%= link_to plant do plant.common_name end %>
+          </td>
+          <td>
+            <% if plant.plant_images.empty? %>
+                <img data-src="holder.js/50px50/thumb" alt="Plant image">
+                <%=  'no image found' %>
+            <% elsif plant.plant_images.first && plant.plant_images.first.image_upload && plant.plant_images.first.image_upload.url %>
+                <%= link_to plant do %>
+                  <%= image_tag(plant.plant_images.first.image_upload.url) %>
+                <% end %>
+            <% else %>
+                <img data-src="holder.js/50px50/thumb" alt="Plant image">
+                <%=  'no image stored' %>
+            <% end %>
           </td>
         </tr>
         <% end %> 

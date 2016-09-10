@@ -45,5 +45,13 @@
           <%= @plant.notes %>
         </p>
 
+        <% @plant.plant_images.each do |plant_image| %>
+          <p class="card-text">
+            Image:
+            <%= image_tag(plant_image.image_upload.url) %>
+          </p>
+        <% end %>
+
+
   </div>
 </div>

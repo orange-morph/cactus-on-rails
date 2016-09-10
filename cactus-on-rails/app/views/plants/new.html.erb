@@ -13,7 +13,7 @@
 <div class="album text-muted">
   <div class="container">
 
-    <%= form_for :plant, url: plants_path do |f| %>
+    <%= form_for(@plant, url: plants_path) do |f| %>
       <div class="form-group">
         <div class="col-sm-3">
           <%= f.label :plant_type %><br>
@@ -47,6 +47,13 @@
       <p>
         <%= f.label :notes %><br>
         <%= f.text_area :notes %>
+      </p>
+
+      <p>
+        <%= f.fields_for :plant_images do |plant_image| %>
+            <%= plant_image.label :image_upload %><br>
+            <%= plant_image.file_field :image_upload, :multiple => true %>
+        <% end %>
       </p>
      
       <p>

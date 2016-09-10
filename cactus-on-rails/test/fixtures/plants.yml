@@ -3,13 +3,13 @@
 one:
   genus: MyString
   species: MyString
-  type: 
+  plant_type:
   common_name: MyString
   notes: MyText
 
 two:
   genus: MyString
   species: MyString
-  type: 
+  plant_type:
   common_name: MyString
   notes: MyText

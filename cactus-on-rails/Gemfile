@@ -30,6 +30,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'holder_rails'
 
+# gem 'simple_form'
+
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick', '~> 4.3'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
