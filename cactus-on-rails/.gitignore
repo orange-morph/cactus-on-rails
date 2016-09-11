@@ -23,3 +23,10 @@
 # Ignore IDE files
 .idea/
 ../.idea/
+
+# Ignore public assets except images folder.
+/public/assets/*
+!/public/assets/images/*
+
+# Ignore public uploads directory.
+/public/uploads/*
