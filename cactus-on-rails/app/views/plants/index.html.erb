@@ -38,8 +38,7 @@
           </td>
           <td>
             <% if plant.plant_images.empty? %>
-                <img data-src="holder.js/50px50/thumb" alt="Plant image">
-                <%=  'no image found' %>
+                <%=  'no images' %>
             <% elsif plant.plant_images.first && plant.plant_images.first.image_upload && plant.plant_images.first.image_upload.url %>
                 <%= link_to plant do %>
                   <%= image_tag(plant.plant_images.first.image_upload.url(:thumb)) %>

@@ -11,6 +11,16 @@ class PlantsController < ApplicationController
 	def new
 		@plant = Plant.new
 		@plant.plant_images.build
+    @plant_types = [
+      ['Cactus', 'Cactus'], 
+      ['Caudiciform', 'Cordiciform'], 
+      ['Leaf Succulent', 'Leaf Succulent'],
+      ['Root Succulent', 'Root Succulent'],
+      ['Stem Succulent', 'Stem Succulent'],
+    ]
+
+
+
 	end
 
 	def create

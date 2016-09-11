@@ -1,0 +1,60 @@
+.plant-label {
+	width:420px;
+	height:150px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background-color:#FFFFFF;
+	-webkit-box-shadow: #B3B3B3 7px 7px 7px;
+	-moz-box-shadow: #B3B3B3 7px 7px 7px; 
+	box-shadow: #B3B3B3 7px 7px 7px;
+	padding: 30px;
+	font-weight: bold;
+	margin: 20px;
+}
+
+.planting-details-label {
+	width:620px;
+	height:100px;
+	background-color:#F2F2F2;
+	// -webkit-box-shadow: #B3B3B3 7px 7px 7px;
+	// -moz-box-shadow: #B3B3B3 7px 7px 7px; 
+	// box-shadow: #B3B3B3 7px 7px 7px;
+	padding: 30px;
+	font-weight: bold;
+	margin: 20px;
+}
+
+.plant-care-label {
+	width:620px;
+	height:350px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background-color:#FFFFFF;
+	-webkit-box-shadow: #B3B3B3 7px 7px 7px;
+	-moz-box-shadow: #B3B3B3 7px 7px 7px; 
+	box-shadow: #B3B3B3 7px 7px 7px;
+	padding: 30px;
+	font-weight: bold;
+	margin: 20px;
+}
+
+.plant-notes-label {
+	width:620px;
+	height:350px;
+	// -webkit-border-radius: 20px;
+	// -moz-border-radius: 20px;
+	// border-radius: 20px;
+	background-color:#FFFFFF;
+	// -webkit-box-shadow: #B3B3B3 7px 7px 7px;
+	// -moz-box-shadow: #B3B3B3 7px 7px 7px; 
+	// box-shadow: #B3B3B3 7px 7px 7px;
+	padding: 30px;
+	font-weight: bold;
+	margin: 20px;
+}
+
+.plant-details-container .card {
+	background-color: #F2F2F2;
+}

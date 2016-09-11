@@ -35,7 +35,7 @@ class PlantImageUploader < CarrierWave::Uploader::Base
   end
 
   version :mid do
-    process resize_to_fit: [300, 300]
+    process resize_to_fit: [380, 280]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -17,7 +17,7 @@
       <div class="form-group">
         <div class="col-sm-3">
           <%= f.label :plant_type %><br>
-          <%= f.select(:plant_type, [['Cactus', 'Cactus'], ['Succulent', 'Succulent']], {}, { :class => 'form-control' }) %>
+          <%= f.select(:plant_type, @plant_types, {}, { :class => 'form-control' }) %>
         </div>
       </div>
 
@@ -26,27 +26,27 @@
 
       <p>
         <%= f.label :genus %><br>
-        <%= f.text_field :genus %>
+        <%= f.text_field :genus, :size => '50' %>
       </p>
 
       <p>
         <%= f.label :species %><br>
-        <%= f.text_field :species %>
+        <%= f.text_field :species, :size => '50' %>
       </p>
 
       <p>
-        <%= f.label :common_name %><br>
-        <%= f.text_field :common_name %>
+        <%= f.label 'Common name(s)' %><br>
+        <%= f.text_field :common_name, :size => '80' %>
       </p>
 
       <div class="checkbox">
-        <%= f.label :grown_from_seed %><br>
+        <%= label_tag(:grown_from_seed, "Grown from seed? ") %>
         <%= check_box_tag(:grown_from_seed) %>
       </div>
 
       <p>
         <%= f.label :notes %><br>
-        <%= f.text_area :notes %>
+        <%= f.text_area :notes, :size => "80%x10%"  %>
       </p>
 
       <p>

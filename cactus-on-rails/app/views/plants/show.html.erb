@@ -12,32 +12,38 @@
 
 <div class="album text-muted">
   <div class="container">
-    <div class="row">
-      <div class="card">
-        <p class="card-text">
+    <div class="row plant-details-container">
+        <h4>
           Plant Type: 
           <%= @plant.plant_type %>
-        </p>
-        <p class="card-text">
-          Genus:
-          <%= @plant.genus %>
-        </p>
-        <p class="card-text">
-          Species:
-          <%= @plant.species %>
-        </p>
-        <p class="card-text">
-          Common Name:
-          <%= @plant.common_name %>
-        </p>
-        <p class="card-text">
-          Grown from seed?
-          <%= @plant.grown_from_seed ? 'Yes' : 'No' %>
-        </p>
-        <p class="card-text">
-          Notes:
-          <%= @plant.notes %>
-        </p>
+        </h4>
+        <div class="plant-label">
+          <h5>
+            Genus:
+            <%= @plant.genus %>
+          </h5>
+          <h5>
+            Species:
+            <%= @plant.species %>
+          </h5>
+          <h5>
+            Common Name:
+            <%= @plant.common_name %>
+          </h5>
+        </div>
+        <div class="planting-details-label">
+          <h5>Planting Details</h5>
+          <p>
+            Grown from seed?
+            <%= @plant.grown_from_seed ? 'Yes' : 'No' %>
+          </p>
+        </div>
+        <div class="plant-notes-label">
+          <h5>Plant Notes</h5>
+          <p>
+            <%= @plant.notes %>
+          </p>
+        </div>
     </div>
     <div class="clearfix"></div>
 

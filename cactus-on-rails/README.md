@@ -16,10 +16,10 @@ Installation and deployment notes:
 
 * Image manipulation requires the installation of ImageMagick, to enable CarrierWave to work.
 for windows see https://sourceforge.net/projects/imagemagick/files/latest/download?source=files
-During installation, ensure that path setting option and C libs options are selected.
+During installation, ensure that path setting option and C libs options are selected. Install to C:\ImageMagick.
 After installation of ImageMagick, open a console and run the following:
- set CPATH=C:\Program Files\ImageMagick-6.9.5-Q16-HDRI\include
- set LIBRARY_PATH=C:\Program Files\ImageMagick-6.9.5-Q16-HDRI\lib
+ set CPATH=C:\ImageMagick\include
+ set LIBRARY_PATH=C:\ImageMagick\lib
 - both needed to set the paths for ImageMagick correctly.
 Then gem install mini_magick (below in bundle install) will take care of it
 Then all should work, as carrierwave is configured to use mini_magick for image processing.
