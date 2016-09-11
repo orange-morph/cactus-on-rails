@@ -5,7 +5,6 @@ class PlantImage < ApplicationRecord
   accepts_nested_attributes_for :image_upload
 
   def get_display_title
-    plant = self.plant
-    return plant.genus+" "+plant.species+" ("+plant.common_name+")"
+    self.plant.display_title
   end
 end

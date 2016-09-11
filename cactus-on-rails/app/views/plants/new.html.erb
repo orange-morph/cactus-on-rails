@@ -17,7 +17,7 @@
       <div class="form-group">
         <div class="col-sm-3">
           <%= f.label :plant_type %><br>
-          <%= f.select(:plant_type, @plant_types, {}, { :class => 'form-control' }) %>
+          <%= f.select(:plant_type, @plant.plant_types, {}, { :class => 'form-control' }) %>
         </div>
       </div>
 
@@ -39,10 +39,37 @@
         <%= f.text_field :common_name, :size => '80' %>
       </p>
 
+      <p>
+        <%= f.label :source %><br>
+        <%= f.text_field :source, :size => '50' %>
+      </p>
+
+      <!--t.date :purchase_date-->
+
       <div class="checkbox">
         <%= label_tag(:grown_from_seed, "Grown from seed? ") %>
         <%= check_box_tag(:grown_from_seed) %>
       </div>
+
+      <!--t.date :planted_date-->
+
+      <p>
+        <%= f.label :pot_type %><br>
+        <%= f.select(:pot_type, @plant.pot_types, {}, { :class => 'form-control' }) %>
+      </p>
+
+      <p>
+        <%= f.label :pot_size %><br>
+        <%= f.select(:pot_size, @plant.pot_sizes, {}, { :class => 'form-control' }) %>
+      </p>
+
+      <p>
+        <%= f.label :care_notes %><br>
+        <%= f.text_area :care_notes, :size => "80%x10%"  %>
+      </p>
+
+      <!--t.date :repotted_date-->
+      <!--t.date :next_repotting_date-->
 
       <p>
         <%= f.label :notes %><br>

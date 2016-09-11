@@ -11,16 +11,6 @@ class PlantsController < ApplicationController
 	def new
 		@plant = Plant.new
 		@plant.plant_images.build
-    @plant_types = [
-      ['Cactus', 'Cactus'], 
-      ['Caudiciform', 'Cordiciform'], 
-      ['Leaf Succulent', 'Leaf Succulent'],
-      ['Root Succulent', 'Root Succulent'],
-      ['Stem Succulent', 'Stem Succulent'],
-    ]
-
-
-
 	end
 
 	def create
@@ -42,7 +32,16 @@ class PlantsController < ApplicationController
         :genus,
         :species,
         :common_name,
+				:source,
+				:acquired_date,
         :grown_from_seed,
+				:planted_date,
+				:age_when_acquired_months,
+				:pot_type,
+				:pot_size,
+				:repotted_date,
+				:next_repotting_date,
+				:care_notes,
         :notes,
         plant_images: [],
         plant_images_attributes: [:id, :plant_id, :image_upload]

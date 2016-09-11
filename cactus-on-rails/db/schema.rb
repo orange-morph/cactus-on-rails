@@ -25,10 +25,19 @@ ActiveRecord::Schema.define(version: 20160910030116) do
     t.string   "genus"
     t.string   "species"
     t.string   "common_name"
+    t.string   "source"
+    t.date     "acquired_date"
     t.boolean  "grown_from_seed"
+    t.date     "planted_date"
+    t.integer  "age_when_acquired_months"
+    t.string   "pot_type"
+    t.string   "pot_size"
+    t.text     "care_notes"
+    t.date     "repotted_date"
+    t.date     "next_repotting_date"
     t.text     "notes"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

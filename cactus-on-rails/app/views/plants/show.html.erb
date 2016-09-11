@@ -12,33 +12,67 @@
 
 <div class="album text-muted">
   <div class="container">
+
     <div class="row plant-details-container">
-        <h4>
-          Plant Type: 
+
+      <div class="plant-label">
+        <h5>
+          <%= @plant.display_title %>
+        </h5>
+        <h6>
+          Plant Type:
           <%= @plant.plant_type %>
-        </h4>
-        <div class="plant-label">
-          <h5>
-            Genus:
-            <%= @plant.genus %>
-          </h5>
-          <h5>
-            Species:
-            <%= @plant.species %>
-          </h5>
-          <h5>
-            Common Name:
-            <%= @plant.common_name %>
-          </h5>
-        </div>
+        </h6>
+      </div>
+    </div>
+
+      <% unless @plant.plant_images.empty? %>
+          <div class="row plant-images-container">
+            <% @plant.plant_images.each do |plant_image| %>
+                <div class="card">
+                  <p class="card-text">
+                    <%= link_to image_tag(plant_image.image_upload.url(:mid)), plant_image.image_upload.url, { :class => "galleried-elements", :title=> plant_image.get_display_title, :rel => "zomg_awesome_images" } %>
+                    (click to view full size)
+                  </p>
+                </div>
+            <% end %>
+          </div>
+      <% end %>
+
+    <div class="row plant-details-container">
         <div class="planting-details-label">
-          <h5>Planting Details</h5>
+          <h5>Source and Planting Details</h5>
+          <p>
+            Source:
+            <%= @plant.source %>
+          </p>
           <p>
             Grown from seed?
             <%= @plant.grown_from_seed ? 'Yes' : 'No' %>
           </p>
+          <%= image_tag(@plant.pot_type_images[@plant.pot_type], :size => "50x50", :class => 'right-float-img') %>
+          <p>
+            Pot Type:
+            <%= @plant.pot_type %>
+          </p>
+          <p>
+            Pot Size:
+            <%= @plant.pot_size %>
+          </p>
         </div>
+      <div class="plant-planning-label">
+        <h5>Planning and Actions</h5>
+
+      </div>
+    </div>
+    <div class="row plant-details-container">
         <div class="plant-notes-label">
+          <h5>Care Notes</h5>
+          <p>
+            <%= @plant.care_notes %>
+          </p>
+        </div>
+        <div class="plant-care-label">
           <h5>Plant Notes</h5>
           <p>
             <%= @plant.notes %>
@@ -47,21 +81,7 @@
     </div>
     <div class="clearfix"></div>
 
-    <% if !@plant.plant_images.empty? %>
 
-      <div class="row">
-          <h4>PLANT IMAGES</h4>
-          <% @plant.plant_images.each do |plant_image| %>
-            <div class="card">
-              <p class="card-text">
-                <%= link_to image_tag(plant_image.image_upload.url(:mid)), plant_image.image_upload.url, { :class => "galleried-elements", :title=> plant_image.get_display_title, :rel => "zomg_awesome_images" } %>
-                (click to view full size)
-              </p>
-            </div>
-          <% end %>
-      </div>
-
-    <% end %>
 
   </div>
 </div>

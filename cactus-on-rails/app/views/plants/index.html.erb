@@ -15,18 +15,15 @@
 
     <table id="plants">
       <thead>
-        <th>Plant Type</th>
         <th>Genus</th>
         <th>Species</th>
         <th>Common Name</th>
+        <th>Pot Type</th>
         <th>Images</th>
       </thead>
       <tbody>
         <% @plants.each do |plant| %>
         <tr>
-          <td>
-            <%= link_to plant do plant.plant_type end %>
-          </td>
           <td>
             <%= link_to plant do plant.genus end %>
           </td>
@@ -35,6 +32,9 @@
           </td>
           <td>
             <%= link_to plant do plant.common_name end %>
+          </td>
+          <td>
+            <%= link_to plant do image_tag(plant.pot_type_images[plant.pot_type], :size => "50x50") end %>
           </td>
           <td>
             <% if plant.plant_images.empty? %>
