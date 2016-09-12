@@ -1,3 +1,17 @@
+$(document).on 'ready page:load', ->
+  $('a.galleried-elements').fancybox(
+    {
+      'transitionIn'  :   'elastic',
+      'transitionOut' :   'elastic',
+      'speedIn'       :   600,
+      'speedOut'      :   200,
+      'overlayShow'   :   true,
+      'autoDimensions':   false,
+      'autoScale'     :   false,
+      'titlePosition' :   'inside'
+    }
+  )
+
 $(document).bind 'turbolinks:load', ->
   Holder.run()
   $('#plants').DataTable(
@@ -13,18 +27,5 @@ $(document).bind 'turbolinks:load', ->
         "search":         "Search Plants:",
       }
     }
-  )
-  $('a.galleried-elements').fancybox(
-    {
-      'transitionIn'  :   'elastic',
-      'transitionOut' :   'elastic',
-      'speedIn'       :   600,
-      'speedOut'      :   200,
-      'overlayShow'   :   true,
-      'autoDimensions':   false,
-      'autoScale'     :   false,
-      'titlePosition' :   'inside'
-  }
-
   )
 

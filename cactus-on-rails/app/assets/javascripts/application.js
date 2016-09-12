@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require holder
 //= require jquery.datatables.min
 //= require fancybox
 //= require cocoon
 //= require init
+//= require turbolinks
 //= require_tree .

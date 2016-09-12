@@ -1,10 +1,9 @@
 <section class="jumbotron text-xs-center">
   <div class="container">
-    <h1 class="jumbotron-heading">Cactus on Rails!</h1>
     <%= image_tag("happy_cactus.jpg") %>
     <p class="lead text-muted">Here are your stored plants...</p>
     <p>
-      <%= link_to "Add New Plants", new_plant_path, class: "btn btn-primary" %>
+      <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"> </i> Add New Plant'.html_safe, new_plant_path, class: "btn btn-info" %>
       <%= link_to "Home", root_path, class: "btn btn-secondary" %>
     </p>
   </div>
@@ -24,7 +23,7 @@
       </thead>
       <tbody>
         <% @plants.each do |plant| %>
-        <tr>
+        <tr data-turbolinks="false">
           <td>
             <%= link_to plant do plant.genus end %>
           </td>
@@ -62,38 +61,6 @@
         <% end %> 
       </tbody>
     </table>
-
-    <div class="row">
-      <% @plants.each do |plant| %>
-          <%= link_to plant do %>
-              <div class="card">
-                <% if plant.plant_images.empty? %>
-                    <img data-src="holder.js/100px280/thumb" alt="Plant image">
-                <% elsif plant.plant_images.first && plant.plant_images.first.image_upload && plant.plant_images.first.image_upload.url %>
-                    <%= link_to plant do %>
-                        <%= image_tag(plant.plant_images.first.image_upload.url(:mid)) %>
-                    <% end %>
-                <% else %>
-                    <img data-src="holder.js/100px280/thumb" alt="Plant image">
-                <% end %>
-                <p class="card-text">
-                  Plant Type:
-                  <%= plant.plant_type %>
-                </p>
-                <p class="card-text">
-                  Genus:
-                  <%= plant.genus %>
-                  Species:
-                  <%= plant.species %>
-                </p>
-                <p class="card-text">
-                  Common Name:
-                  <%= plant.common_name %>
-                </p>
-              </div>
-          <% end %>
-      <% end %>
-    </div>
 
   </div>
 </div>

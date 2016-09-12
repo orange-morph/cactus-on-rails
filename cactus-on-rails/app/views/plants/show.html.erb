@@ -1,11 +1,11 @@
 <section class="jumbotron text-xs-center">
   <div class="container">
-    <h1 class="jumbotron-heading">Cactus on Rails!</h1>
     <%= image_tag("happy_cactus.jpg") %>
     <p class="lead text-muted">Plant Details</p>
     <p>
-      <%= link_to "Add New Plants", new_plant_path, class: "btn btn-primary" %>
-      <%= link_to "View my Plants", plants_path, class: "btn btn-secondary" %>
+      <%= link_to '<i class="fa fa-edit" aria-hidden="true"> </i> Edit This Plant'.html_safe, edit_plant_path(@plant), class: "btn btn-success" %>
+      <%= link_to '<i class="fa fa-bars datatable-icon" aria-hidden="true"> </i> View my Plants'.html_safe, plants_path, class: "btn btn-primary" %>
+      <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"> </i> Add New Plant'.html_safe, new_plant_path, class: "btn btn-info" %>
     </p>
   </div>
 </section>
