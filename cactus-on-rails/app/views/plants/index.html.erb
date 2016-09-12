@@ -11,7 +11,7 @@
 </section>
 
 <div class="album text-muted">
-  <div class="container">
+  <div class="container-jen">
 
     <table id="plants">
       <thead>
@@ -20,8 +20,7 @@
         <th>Common Name</th>
         <th>Pot Type</th>
         <th>Images</th>
-        <th>edit</th>
-        <th>delete</th>
+        <th>Edit / Delete</th>
       </thead>
       <tbody>
         <% @plants.each do |plant| %>
@@ -41,21 +40,20 @@
           <td>
             <% if plant.plant_images.empty? %>
                 <%=  'no images' %>
-            <% elsif plant.plant_images.first && plant.plant_images.first.image_upload && plant.plant_images.first.image_upload.url %>
-                <%= link_to plant do %>
-                  <%= image_tag(plant.plant_images.first.image_upload.url(:thumb)) %>
-                <% end %>
             <% else %>
-                <img data-src="holder.js/50px50/thumb" alt="Plant image">
-                <%=  'no image stored' %>
+              <% plant.plant_images.each_with_index do |plant_image, ix| %>
+                <% if ix < 3 && plant_image.image_upload && plant_image.image_upload.url(:thumb) %>
+                  <%= link_to plant do %>
+                  <%= image_tag(plant_image.image_upload.url(:thumb)) %>
+                <% end %>
+                <% end %>
+              <% end %>
             <% end %>
           </td>
           <td>
-            <%= link_to plant do %>
+            <%= link_to edit_plant_path(plant) do %>
               <i class="fa fa-2x fa-pencil-square-o edit-icon" aria-hidden="true"></i>  
             <% end %>
-          </td>
-          <td>
             <%= link_to plant, method: :delete do %>
               <i class="fa org fa-2x fa-remove delete-icon"></i>
             <% end %>

@@ -1,0 +1,13 @@
+<div class="nested-fields">
+	<div class="field">
+		<% if f.object && f.object.image_upload && f.object.image_upload.url(:mid) %>
+			<%= f.label "Plant Image" %><br>
+			<%= image_tag(f.object.image_upload.url(:mid)) %>
+			<%= link_to_remove_association "remove image", f %>
+		<% else %>
+			<%= f.label "Add a new Plant Image:" %>
+    		<%= f.file_field :image_upload %>
+    	<% end %>
+	</div>
+	
+</div>

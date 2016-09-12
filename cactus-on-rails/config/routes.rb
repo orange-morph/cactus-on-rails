@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
-  resources :plants
+  resources :plants do
+  	resources :plant_images do
+  		collection do 
+  			get 'edit'
+  			post 'add'
+  			delete 'destroy'
+  		end
+  	end
+  end
+
+  resource :plant_images
 
   root 'welcome#index'
 

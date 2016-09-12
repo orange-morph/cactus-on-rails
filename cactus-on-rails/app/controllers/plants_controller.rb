@@ -20,7 +20,19 @@ class PlantsController < ApplicationController
 	end
 
 	def edit
+    @plant = Plant.find(params[:id])
+    @plant.plant_images.build
+    @plant_image = @plant.plant_images.new
 	end
+
+  def update
+    @plant = Plant.find(params[:id])
+    if @plant.update_attributes(plant_params)
+      redirect_to @plant
+    else
+      render 'edit'
+    end
+  end
 
 	def destroy
     @plant = Plant.find(params[:id])
@@ -31,27 +43,37 @@ class PlantsController < ApplicationController
     redirect_to plants_path
 	end
 
-  private def plant_params
-    params.require(:plant).permit(
-        :id,
-        :plant_type,
-        :genus,
-        :species,
-        :common_name,
-				:source,
-				:acquired_date,
-        :grown_from_seed,
-				:planted_date,
-				:age_when_acquired_months,
-				:pot_type,
-				:pot_size,
-				:repotted_date,
-				:next_repotting_date,
-				:care_notes,
-        :notes,
-        plant_images: [],
-        plant_images_attributes: [:id, :plant_id, :image_upload]
-    )
-  end
+  private 
+
+    def plant_params
+      params.require(:plant).permit(
+          :id,
+          :plant_type,
+          :genus,
+          :species,
+          :common_name,
+  				:source,
+  				:acquired_date,
+          :grown_from_seed,
+  				:planted_date,
+  				:age_when_acquired_months,
+  				:pot_type,
+  				:pot_size,
+  				:repotted_date,
+  				:next_repotting_date,
+  				:care_notes,
+          :notes,
+          plant_images: [],
+          plant_images_attributes: [:id, :plant_id, :image_upload, :_destroy]
+      )
+    end
+
+    def plant_image_params
+      params.require(:plant_image).permit(
+          :id,
+          :plant_id,
+          :image_upload
+      )
+    end
 
 end

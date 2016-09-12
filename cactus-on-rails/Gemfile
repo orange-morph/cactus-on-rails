@@ -37,6 +37,8 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 gem 'fancybox-rails'
 
+gem 'cocoon'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

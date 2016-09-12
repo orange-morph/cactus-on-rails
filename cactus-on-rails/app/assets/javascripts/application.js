@@ -16,5 +16,6 @@
 //= require holder
 //= require jquery.datatables.min
 //= require fancybox
+//= require cocoon
 //= require init
 //= require_tree .

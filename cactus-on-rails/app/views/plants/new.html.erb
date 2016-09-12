@@ -76,12 +76,15 @@
         <%= f.text_area :notes, :size => "80%x10%"  %>
       </p>
 
-      <p>
+      <h3>Images</h3>
+      <div id="images">
         <%= f.fields_for :plant_images do |plant_image| %>
-            <%= plant_image.label :image_upload %><br>
-            <%= plant_image.file_field :image_upload %>
+          <%= render 'plant_image_fields', f: plant_image %>
         <% end %>
-      </p>
+        <div class="links">
+          <%= link_to_add_association 'Add Plant Image', f, :plant_images %>
+        </div>
+      </div>
      
       <p>
         <%= f.submit %>
