@@ -22,7 +22,13 @@ class PlantsController < ApplicationController
 	def edit
 	end
 
-	def delete
+	def destroy
+    @plant = Plant.find(params[:id])
+    @plant.plant_images.each do |file| 
+      file.remove_image_upload!
+    end
+    @plant.destroy!
+    redirect_to plants_path
 	end
 
   private def plant_params

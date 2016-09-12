@@ -1,5 +1,5 @@
 class Plant < ApplicationRecord
-  has_many :plant_images, inverse_of: :plant
+  has_many :plant_images, inverse_of: :plant, dependent: :destroy
   accepts_nested_attributes_for :plant_images, :allow_destroy => true
 
   def display_title

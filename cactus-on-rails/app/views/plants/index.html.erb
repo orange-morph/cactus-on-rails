@@ -20,6 +20,8 @@
         <th>Common Name</th>
         <th>Pot Type</th>
         <th>Images</th>
+        <th>edit</th>
+        <th>delete</th>
       </thead>
       <tbody>
         <% @plants.each do |plant| %>
@@ -46,6 +48,16 @@
             <% else %>
                 <img data-src="holder.js/50px50/thumb" alt="Plant image">
                 <%=  'no image stored' %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to plant do %>
+              <i class="fa fa-2x fa-pencil-square-o edit-icon" aria-hidden="true"></i>  
+            <% end %>
+          </td>
+          <td>
+            <%= link_to plant, method: :delete do %>
+              <i class="fa org fa-2x fa-remove delete-icon"></i>
             <% end %>
           </td>
         </tr>
