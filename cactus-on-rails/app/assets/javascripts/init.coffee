@@ -33,8 +33,7 @@ $(document).on 'ready page:load', ->
       'speedOut'      :   200,
       'overlayShow'   :   true,
       'autoDimensions':   false,
-      'autoScale'     :   false,
-      'titlePosition' :   'inside'
+      'autoScale'     :   false
     }
   )
 

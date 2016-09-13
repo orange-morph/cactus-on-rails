@@ -23,6 +23,25 @@
 
 .plant-images-container {
   text-align: center;
+  width: 95%;
+  background-color: #cccccc;
+  padding: 20px;
+  position: relative;
+  .plant-image-view {
+    background-color: #FFFFFF;
+    -webkit-box-shadow: #B3B3B3 7px 7px 7px;
+    -moz-box-shadow: #B3B3B3 7px 7px 7px;
+    box-shadow: #B3B3B3 7px 7px 7px;
+    margin: 5px 12px 5px 12px;
+    float: left;
+    display: inline;
+    position: relative;
+    padding: 10px;
+    min-height: 300px;
+    .img {
+
+    }
+  }
 }
 
 .planting-details-label {
@@ -75,7 +94,7 @@
 	background-color: #F2F2F2;
 }
 
-img.right-float-img {
+.right-float-img {
   float: right;
 }
 
@@ -119,4 +138,50 @@ img.right-float-img {
 
 .plant-details-container p {
   color: #6c6c6c;
+}
+
+.jen-plant-image-form-wrapper {
+  padding: 20px;
+  background-color: #d2e1fb;
+  border-radius: 5px;
+}
+
+.nested-fields {
+  float: left;
+  display: inline;
+  margin-bottom: -30px;
+  height: 150;
+  .field {
+    display: inline;
+    padding: 10px;
+    position: relative;
+    .plant-image-footer {
+      position: absolute;
+      bottom: 5px;
+      left: 30px;
+    }
+    .plant-image-wrapper {
+      padding: 10px;
+      margin: 5px;
+      background-color: #FFFFFF;
+      min-height: 150px;
+      min-width: 120px;
+      -webkit-box-shadow: #B3B3B3 7px 7px 7px;
+      -moz-box-shadow: #B3B3B3 7px 7px 7px;
+      box-shadow: #B3B3B3 7px 7px 7px;
+    }
+    .img {
+      height: 100px;
+      margin: auto;
+    }
+  }
+}
+
+.links {
+  clear: both;
+  float: left;
+  a {
+    float: left;
+    margin-top: 25px;
+  }
 }
