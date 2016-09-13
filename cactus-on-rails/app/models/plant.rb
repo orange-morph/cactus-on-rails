@@ -63,7 +63,7 @@ class Plant < ApplicationRecord
   def pot_type_images
     {
         'Plastic - standard' => 'pot_plastic_standard.png',
-        'Plastic - orchid' => 'pot_plastic_standard.png',
+        'Plastic - orchid' => 'pot_orchid.png',
         'Terracotta - unglazed' => 'pot1.png',
         'Terracotta - glazed' => 'pot_terracotta_glazed.png',
         'Ceramic' => 'pot_ceramic.png',

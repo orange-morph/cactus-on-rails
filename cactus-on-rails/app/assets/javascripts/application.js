@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require best_in_place
 //= require holder
 //= require jquery.datatables.min
 //= require fancybox

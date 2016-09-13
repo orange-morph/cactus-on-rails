@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: 332eda290cb133683a99d43a30321bab27d85e70
+  specs:
+    best_in_place (3.1.0)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
+
+GIT
   remote: git://github.com/carrierwaveuploader/carrierwave.git
   revision: c45699c318ca895f89fa3304204e48b5f1c411f1
   specs:
@@ -160,6 +168,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  best_in_place!
   byebug
   carrierwave!
   cocoon

@@ -29,11 +29,17 @@ class PlantsController < ApplicationController
 
   def update
     @plant = Plant.find(params[:id])
-    if @plant.update_attributes(plant_params)
-      redirect_to @plant
-    else
-      render 'edit'
+
+    respond_to do |format|
+      if @plant.update_attributes(plant_params)
+        format.html { redirect_to(@plant) }
+        format.json { respond_with_bip(@plant) }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(@plant) }
+      end
     end
+
   end
 
 	def destroy

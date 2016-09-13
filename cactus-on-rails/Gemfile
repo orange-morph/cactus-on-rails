@@ -30,14 +30,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'holder_rails'
 
-# gem 'rmagick'
 gem 'mini_magick'
-
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 gem 'fancybox-rails'
 
 gem 'cocoon'
+
+gem 'best_in_place', github: 'bernat/best_in_place'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

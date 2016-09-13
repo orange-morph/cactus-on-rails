@@ -54,22 +54,29 @@
     <div class="row plant-details-container">
         <div class="planting-details-label">
           <h5>Source and Planting Details</h5>
-          <p>
+          <br>
+          <p id="source-activator">
             Source:
-            <%= @plant.source %>
+            <%= best_in_place @plant, :source, :place_holder => '(plant source not specified)', :activator => "#source-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
           </p>
-          <p>
+          <p id="seed-activator">
             Grown from seed?
-            <%= @plant.grown_from_seed ? 'Yes' : 'No' %>
+            <%= best_in_place @plant, :grown_from_seed, :as => 'checkbox', collection: {false: "No", true: "Yep"}, :activator => "#seed-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
           </p>
-          <%= image_tag(@plant.pot_type_images[@plant.pot_type], :size => "50x50", :class => 'right-float-img') %>
-          <p>
+          <div class="pot-image">
+            <%= image_tag(@plant.pot_type_images[@plant.pot_type], :size => "50x50", :class => 'right-float-img') %>
+          </div>
+          <p id="pot-type-activator">
             Pot Type:
-            <%= @plant.pot_type %>
+            <%= best_in_place @plant, :pot_type, :as => 'select', :collection => @plant.pot_types, :classes => 'pot_type_selector', :data => {:pot_type_url => @plant.pot_type_images[@plant.pot_type]}, :activator => "#pot-type-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
           </p>
-          <p>
+          <p id="pot-size-activator">
             Pot Size:
-            <%= @plant.pot_size %>
+            <%= best_in_place @plant, :pot_size, :as => 'select', :collection => @plant.pot_sizes, :activator => "#pot-size-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
           </p>
         </div>
       <div class="plant-planning-label">
@@ -80,14 +87,16 @@
     <div class="row plant-details-container">
         <div class="plant-notes-label">
           <h5>Care Notes</h5>
-          <p>
-            <%= @plant.care_notes %>
+          <p id="care-notes-activator" >
+            <%= best_in_place @plant, :care_notes, :as => 'textarea', :ok_button => 'Save', :cancel_button => 'Cancel', :place_holder => '(no care notes specified)', :activator => "#care-notes-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
           </p>
         </div>
         <div class="plant-care-label">
           <h5>Plant Notes</h5>
-          <p>
-            <%= @plant.notes %>
+          <p id="notes-activator">
+            <%= best_in_place @plant, :notes, :as => 'textarea', :ok_button => 'Save', :cancel_button => 'Cancel', :place_holder => '(no plant notes specified)', :activator => "#notes-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
           </p>
         </div>
     </div>
