@@ -1,7 +1,7 @@
 <section class="jumbotron text-xs-center">
   <div class="container">
     <%= image_tag("happy_cactus.jpg") %>
-    <p class="lead text-muted">Here are your stored plants...</p>
+    <p class="lead text-muted">Here is your Plant Collection!</p>
     <p>
       <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"> </i> Add New Plant'.html_safe, new_plant_path, class: "btn btn-info" %>
       <%= link_to "Home", root_path, class: "btn btn-secondary" %>
@@ -19,7 +19,7 @@
         <th>Common Name</th>
         <th>Pot Type</th>
         <th>Images</th>
-        <th>Edit / Delete</th>
+        <th></th>
       </thead>
       <tbody>
         <% @plants.each do |plant| %>
@@ -49,13 +49,10 @@
               <% end %>
             <% end %>
           </td>
-          <td>
-            <%= link_to edit_plant_path(plant) do %>
-              <i class="fa fa-2x fa-pencil-square-o edit-icon" aria-hidden="true"></i>  
-            <% end %>
-            <%= link_to plant, method: :delete do %>
-              <i class="fa org fa-2x fa-remove delete-icon"></i>
-            <% end %>
+          <td style="width: 300px;">
+            <%= link_to '<i class="fa fa-eye" aria-hidden="true"> </i> View'.html_safe, plant_path(plant), class: "btn btn-outline-primary" %>
+            <%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"> </i> Edit'.html_safe, edit_plant_path(plant), class: "btn btn-outline-warning" %>
+            <%= link_to '<i class="fa fa-remove" aria-hidden="true"> </i> Delete'.html_safe, plant, method: :delete, class: "btn btn-outline-danger" %>
           </td>
         </tr>
         <% end %> 

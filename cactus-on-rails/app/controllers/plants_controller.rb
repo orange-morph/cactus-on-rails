@@ -6,6 +6,8 @@ class PlantsController < ApplicationController
 
 	def show
 		@plant = Plant.find(params[:id])
+    @next_plant = @plant.next_plant
+    @prev_plant = @plant.prev_plant
 	end
 
 	def new

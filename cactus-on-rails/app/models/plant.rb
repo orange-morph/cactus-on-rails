@@ -3,7 +3,27 @@ class Plant < ApplicationRecord
   accepts_nested_attributes_for :plant_images, :allow_destroy => true
 
   def display_title
-    self.genus+" "+self.species+" ("+self.common_name+")"
+    if self.common_name.blank?
+      self.genus+" "+self.species
+    else
+      self.genus+" "+self.species+" ("+self.common_name+")"
+    end
+  end
+
+  def link_name
+    if self.genus.blank? && self.species.blank?
+      self.link_common_name
+    else
+      "("+self.genus+" "+self.species+")"
+    end
+  end
+
+  def link_common_name
+    if self.common_name.blank?
+      "(unnamed plant)"
+    else
+      "("+self.common_name+")"
+    end
   end
 
   def plant_types
@@ -52,6 +72,14 @@ class Plant < ApplicationRecord
         'Other' => 'pot_unknown.png',
         nil => 'pot_unknown.png'
     }
+  end
+
+  def next_plant
+    Plant.where('id > ?', self.id).first
+  end
+
+  def prev_plant
+    Plant.where('id < ?', self.id).last
   end
 
 end

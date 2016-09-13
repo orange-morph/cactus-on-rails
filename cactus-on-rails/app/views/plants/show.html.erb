@@ -3,7 +3,7 @@
     <%= image_tag("happy_cactus.jpg") %>
     <p class="lead text-muted">Plant Details</p>
     <p>
-      <%= link_to '<i class="fa fa-edit" aria-hidden="true"> </i> Edit This Plant'.html_safe, edit_plant_path(@plant), class: "btn btn-success" %>
+      <%= link_to '<i class="fa fa-edit" aria-hidden="true"> </i> Edit This Plant'.html_safe, edit_plant_path(@plant), class: "btn btn-warning" %>
       <%= link_to '<i class="fa fa-bars datatable-icon" aria-hidden="true"> </i> View All Plants'.html_safe, plants_path, class: "btn btn-primary" %>
       <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"> </i> Add New Plant'.html_safe, new_plant_path, class: "btn btn-info" %>
     </p>
@@ -13,7 +13,19 @@
 <div class="album text-muted">
   <div class="container">
 
-    <div class="row plant-details-container">
+    <div class="row plant-details-container" data-turbolinks="false">
+
+      <% if @prev_plant %>
+        <div class="prev-plant">
+          <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"> </i> Previous Plant<br><span style="font-size: 0.8em;">'.html_safe+@prev_plant.link_name+'</span>'.html_safe, plant_path(@prev_plant), class: "btn btn-success" %>
+        </div>
+      <% end %>
+
+      <% if @next_plant %>
+        <div class="next-plant">
+          <%= link_to 'Next Plant <i class="fa fa-arrow-right" aria-hidden="true"> </i><br><span style="font-size: 0.8em;">'.html_safe+@next_plant.link_name+'</span>'.html_safe, plant_path(@next_plant), class: "btn btn-success" %>
+        </div>
+      <% end %>
 
       <div class="plant-label">
         <h5>
@@ -26,18 +38,18 @@
       </div>
     </div>
 
-      <% unless @plant.plant_images.empty? %>
-          <div class="row plant-images-container">
-            <% @plant.plant_images.each do |plant_image| %>
-                <div class="card">
-                  <p class="card-text">
-                    <%= link_to image_tag(plant_image.image_upload.url(:mid)), plant_image.image_upload.url, { :class => "galleried-elements", :title=> plant_image.get_display_title, :rel => "zomg_awesome_images" } %>
-                    (click to view full size)
-                  </p>
-                </div>
-            <% end %>
-          </div>
-      <% end %>
+    <% unless @plant.plant_images.empty? %>
+        <div class="row plant-images-container">
+          <% @plant.plant_images.each do |plant_image| %>
+              <div class="card">
+                <p class="card-text">
+                  <%= link_to image_tag(plant_image.image_upload.url(:mid)), plant_image.image_upload.url, { :class => "galleried-elements", :title=> plant_image.get_display_title, :rel => "zomg_awesome_images" } %>
+                  (click to view full size)
+                </p>
+              </div>
+          <% end %>
+        </div>
+    <% end %>
 
     <div class="row plant-details-container">
         <div class="planting-details-label">
