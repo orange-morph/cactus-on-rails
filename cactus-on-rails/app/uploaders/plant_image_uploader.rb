@@ -28,6 +28,8 @@ class PlantImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+  
+  process :auto_orient
 
   # Create different versions of your uploaded files:
   version :thumb do
