@@ -32,8 +32,8 @@ $(document).on 'ready page:load', ->
       'speedIn'       :   600,
       'speedOut'      :   200,
       'overlayShow'   :   true,
-      'autoDimensions':   false,
-      'autoScale'     :   false
+      'autoDimensions':   true,
+      'autoScale'     :   true
     }
   )
   $('.datepicker').datepicker({
