@@ -66,7 +66,7 @@
           <p>
             <%= form_for(@plant) do |f| %>
               <%= f.label :acquired_date %><br>
-              <%= f.text_field :acquired_date, :class => 'datepicker' %>
+              <%= f.text_field :acquired_date,  placeholder: " unknown", :class => 'datepicker' %>
               <%= f.submit 'Save date', :class => 'btn btn-primary' %>
             <% end %>
           </p>
@@ -101,21 +101,21 @@
         <p>
           <%= form_for(@plant) do |f| %>
               <%= f.label :planted_date %><br>
-              <%= f.text_field :planted_date, :class => 'datepicker' %>
+              <%= f.text_field :planted_date,  placeholder: " unknown", :class => 'datepicker' %>
               <%= f.submit 'Save date', :class => 'btn btn-primary' %>
             <% end %>
         </p>
         <p>
           <%= form_for(@plant) do |f| %>
               <%= f.label :repotted_date %><br>
-              <%= f.text_field :repotted_date, :class => 'datepicker' %>
+              <%= f.text_field :repotted_date,  placeholder: " unknown", :class => 'datepicker' %>
               <%= f.submit 'Save date', :class => 'btn btn-primary' %>
             <% end %>
         </p>
         <p>
           <%= form_for(@plant) do |f| %>
               <%= f.label :next_repotting_date %><br>
-              <%= f.text_field :next_repotting_date, :class => 'datepicker' %>
+              <%= f.text_field :next_repotting_date,  placeholder: " unknown", :class => 'datepicker' %>
               <%= f.submit 'Save date', :class => 'btn btn-primary' %>
             <% end %>
         </p>
