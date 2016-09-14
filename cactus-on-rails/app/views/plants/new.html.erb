@@ -95,13 +95,21 @@
           <%= render 'plant_image_fields', f: plant_image %>
         <% end %>
         <div class="links">
-          <%= link_to_add_association 'Add Plant Image', f, :plant_images %>
+          <%= link_to_add_association 'Add another Plant Image', f, :plant_images, class: "btn btn-success" %>
         </div>
       </div>
-     
-      <p>
-        <%= f.submit %>
-      </p>
+        <br>
+
+      <div class="clearfix"></div>
+        <br><br>
+
+
+      <div class="submit-wrapper">
+         <p>
+           <%= f.submit 'Save Plant', :class => 'btn btn-primary' %>
+        </p>
+      </div>
+
     <% end %>
 
   </div>

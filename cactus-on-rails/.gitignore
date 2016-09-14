@@ -26,7 +26,7 @@
 
 # Ignore public assets except images folder.
 /public/assets/*
-!/public/assets/images/*
+!/public/assets/images/
 
 # Ignore public uploads directory.
 /public/uploads/*

@@ -63,7 +63,6 @@
     <div class="row plant-details-container">
         <div class="planting-details-label">
           <h5>Source and Planting Details</h5>
-          <br>
           <p>
             <%= form_for(@plant) do |f| %>
               <%= f.label :acquired_date %><br>
@@ -96,6 +95,7 @@
           </p>
 
         </div>
+
       <div class="plant-planning-label">
         <h5>Planning and Actions</h5>
         <p>
@@ -119,9 +119,10 @@
               <%= f.submit 'Save date', :class => 'btn btn-primary' %>
             <% end %>
         </p>
-
       </div>
+
     </div>
+
     <div class="row plant-details-container">
         <div class="plant-notes-label">
           <h5>Care Notes</h5>
@@ -138,17 +139,12 @@
           </p>
         </div>
     </div>
+
     <div class="clearfix"></div>
 
     <div class="jen-plant-image-form-wrapper">
       <%= form_for(@plant) do |f| %>
-
           <br>
-
-          <!--t.date :planted_date-->
-          <!--t.date :repotted_date-->
-          <!--t.date :next_repotting_date-->
-
           <h3>Add / Remove Plant Images</h3>
           <div class="clearfix"></div>
           <div class="links">
@@ -172,8 +168,6 @@
           </div>
       <% end %>
     </div>
-
-
 
   </div>
 </div>
