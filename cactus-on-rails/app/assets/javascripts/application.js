@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/datepicker
 //= require best_in_place
 //= require holder
 //= require jquery.datatables.min

@@ -44,14 +44,20 @@
         <%= f.text_field :source, :size => '50' %>
       </p>
 
-      <!--t.date :purchase_date-->
+      <p>
+        <%= f.label :acquired_date %><br>
+        <%= f.text_field :acquired_date, :class => 'datepicker' %>
+      </p>
 
       <div class="checkbox">
         <%= label_tag(:grown_from_seed, "Grown from seed? ") %>
         <%= check_box_tag(:grown_from_seed) %>
       </div>
 
-      <!--t.date :planted_date-->
+      <p>
+        <%= f.label :planted_date %><br>
+        <%= f.text_field :planted_date, :class => 'datepicker' %>
+      </p>
 
       <p>
         <%= f.label :pot_type %><br>
@@ -68,8 +74,15 @@
         <%= f.text_area :care_notes, :size => "80%x10%"  %>
       </p>
 
-      <!--t.date :repotted_date-->
-      <!--t.date :next_repotting_date-->
+      <p>
+        <%= f.label :repotted_date %><br>
+        <%= f.text_field :repotted_date, :class => 'datepicker' %>
+      </p>
+
+      <p>
+        <%= f.label :next_repotting_date %><br>
+        <%= f.text_field :next_repotting_date, :class => 'datepicker' %>
+      </p>
 
       <p>
         <%= f.label :notes %><br>

@@ -64,6 +64,13 @@
         <div class="planting-details-label">
           <h5>Source and Planting Details</h5>
           <br>
+          <p>
+            <%= form_for(@plant) do |f| %>
+              <%= f.label :acquired_date %><br>
+              <%= f.text_field :acquired_date, :class => 'datepicker' %>
+              <%= f.submit 'Save date', :class => 'btn btn-primary' %>
+            <% end %>
+          </p>
           <p id="source-activator">
             Source:
             <%= best_in_place @plant, :source, :place_holder => '(plant source not specified)', :activator => "#source-activator" %>
@@ -71,7 +78,7 @@
           </p>
           <p id="seed-activator">
             Grown from seed?
-            <%= best_in_place @plant, :grown_from_seed, :as => 'checkbox', collection: {false: "No", true: "Yep"}, :activator => "#seed-activator" %>
+            <%= best_in_place @plant, :grown_from_seed, :as => 'checkbox', collection: {false: "Nah", true: "Yep"}, :activator => "#seed-activator", :place_holder => 'Nah' %>
             <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
           </p>
           <div class="pot-image">
@@ -87,9 +94,31 @@
             <%= best_in_place @plant, :pot_size, :as => 'select', :collection => @plant.pot_sizes, :activator => "#pot-size-activator" %>
             <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
           </p>
+
         </div>
       <div class="plant-planning-label">
         <h5>Planning and Actions</h5>
+        <p>
+          <%= form_for(@plant) do |f| %>
+              <%= f.label :planted_date %><br>
+              <%= f.text_field :planted_date, :class => 'datepicker' %>
+              <%= f.submit 'Save date', :class => 'btn btn-primary' %>
+            <% end %>
+        </p>
+        <p>
+          <%= form_for(@plant) do |f| %>
+              <%= f.label :repotted_date %><br>
+              <%= f.text_field :repotted_date, :class => 'datepicker' %>
+              <%= f.submit 'Save date', :class => 'btn btn-primary' %>
+            <% end %>
+        </p>
+        <p>
+          <%= form_for(@plant) do |f| %>
+              <%= f.label :next_repotting_date %><br>
+              <%= f.text_field :next_repotting_date, :class => 'datepicker' %>
+              <%= f.submit 'Save date', :class => 'btn btn-primary' %>
+            <% end %>
+        </p>
 
       </div>
     </div>

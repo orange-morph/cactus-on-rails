@@ -36,6 +36,13 @@ $(document).on 'ready page:load', ->
       'autoScale'     :   false
     }
   )
+  $('.datepicker').datepicker({
+    dateFormat: "yy-mm-dd",
+    showOn: "both",
+    buttonText: "choose date",
+    buttonImage: "../assets/images/calendar-30.png"
+  })
+  $('button.ui-datepicker-trigger').addClass('btn btn-default btn-sm')
 
 $(document).bind 'turbolinks:load', ->
   Holder.run()

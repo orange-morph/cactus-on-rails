@@ -39,6 +39,8 @@ gem 'cocoon'
 
 gem 'best_in_place', github: 'bernat/best_in_place'
 
+gem 'jquery-ui-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
