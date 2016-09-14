@@ -17,6 +17,10 @@
         <th>Genus</th>
         <th>Species</th>
         <th>Common Name</th>
+        <th>Acquired</th>
+        <th>Planted</th>
+        <th>Repotted</th>
+        <th>Repotting Due</th>
         <th>Pot Type</th>
         <th>Images</th>
         <th></th>
@@ -32,6 +36,18 @@
           </td>
           <td>
             <%= link_to plant do plant.common_name end %>
+          </td>
+          <td>
+            <%= link_to plant do  plant.acquired_date ? plant.acquired_date.strftime("%Y-%m-%d") : '' end %>
+          </td>
+          <td>
+            <%= link_to plant do plant.planted_date ? plant.planted_date.strftime("%Y-%m-%d") : '' end %>
+          </td>
+          <td>
+            <%= link_to plant do plant.repotted_date ? plant.repotted_date.strftime("%Y-%m-%d") : '' end %>
+          </td>
+          <td>
+            <%= link_to plant do plant.next_repotting_date ? plant.next_repotting_date.strftime("%Y-%m-%d") : '' end %>
           </td>
           <td>
             <%= link_to plant do image_tag(plant.pot_type_images[plant.pot_type], :size => "50x50") end %>
