@@ -31,10 +31,12 @@ class PlantImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
+    process :auto_orient
     process resize_to_fit: [100, 100]
   end
 
   version :mid do
+    process :auto_orient
     process resize_to_fit: [380, 280]
   end
 
@@ -49,5 +51,12 @@ class PlantImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  
+  
+  def auto_orient
+    manipulate! do |img|
+      img = img.auto_orient
+    end
+  end
 
 end
