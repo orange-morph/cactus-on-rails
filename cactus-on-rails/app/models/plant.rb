@@ -32,7 +32,8 @@ class Plant < ApplicationRecord
         ['Caudiciform', 'Caudiciform'],
         ['Leaf Succulent', 'Leaf Succulent'],
         ['Root Succulent', 'Root Succulent'],
-        ['Stem Succulent', 'Stem Succulent']
+        ['Stem Succulent', 'Stem Succulent'],
+        ['Bulb', 'Bulb']
     ]
   end
 
