@@ -41,14 +41,21 @@ $(document).on 'ready page:load', ->
     showOn: "both",
     buttonText: "choose date",
     buttonImage: "../assets/images/calendar-30.png",
-    showButtonPanel: true
+    showButtonPanel: false
   })
-  $.datepicker._gotoToday (id) ->
-    $(id).datepicker('setDate', new Date()).datepicker('hide').blur()
+  #  $.datepicker._gotoToday (id) ->
+  #    $(id).datepicker('setDate', new Date()).datepicker('hide').blur()
 
   $('button.ui-datepicker-trigger').addClass('btn btn-default btn-sm')
 
 $(document).bind 'turbolinks:load', ->
+  $('.datepicker').datepicker({
+    dateFormat: "yy-mm-dd",
+    showOn: "both",
+    buttonText: "choose date",
+    buttonImage: "../assets/images/calendar-30.png",
+    showButtonPanel: false
+  })
   Holder.run()
   $('#plants').DataTable(
     {
