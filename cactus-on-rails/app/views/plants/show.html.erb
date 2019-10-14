@@ -1,0 +1,173 @@
+<section class="jumbotron text-xs-center">
+  <div class="container">
+    <%= image_tag("happy_cactus.jpg") %>
+    <p class="lead text-muted">Plant Details</p>
+    <p>
+      <%= link_to '<i class="fa fa-bars datatable-icon" aria-hidden="true"> </i> View All Plants'.html_safe, plants_path, class: "btn btn-primary" %>
+      <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"> </i> Add New Plant'.html_safe, new_plant_path, class: "btn btn-info" %>
+    </p>
+  </div>
+</section>
+
+<div class="album text-muted">
+  <div class="container">
+
+    <div class="row plant-details-container" data-turbolinks="false">
+
+      <% if @prev_plant %>
+        <div class="prev-plant">
+          <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"> </i> Previous Plant<br><span style="font-size: 0.8em;">'.html_safe+@prev_plant.link_name+'</span>'.html_safe, plant_path(@prev_plant), class: "btn btn-success" %>
+        </div>
+      <% end %>
+
+      <% if @next_plant %>
+        <div class="next-plant">
+          <%= link_to 'Next Plant <i class="fa fa-arrow-right" aria-hidden="true"> </i><br><span style="font-size: 0.8em;">'.html_safe+@next_plant.link_name+'</span>'.html_safe, plant_path(@next_plant), class: "btn btn-success" %>
+        </div>
+      <% end %>
+
+      <div class="plant-label">
+        <h4>
+          <span id="genus-activator">
+             <%= best_in_place @plant, :genus, :place_holder => '(genus unspecified)', :activator => "#genus-activator" %>
+          </span>
+          <span id="species-activator">
+             <%= best_in_place @plant, :species, :place_holder => '(species unspecified)', :activator => "#species-activator" %>
+          </span>
+          <br>
+          <span id="common-name-activator">
+            (
+             <%= best_in_place @plant, :common_name, :place_holder => 'common name unspecified', :activator => "#common-name-activator" %>
+            )
+          </span>
+        </h4>
+        <h5 id="plant-types-activator">
+          Plant Type:
+          <%= best_in_place @plant, :plant_type, :as => 'select', :collection => @plant.plant_types, :activator => "#plant-types-activator" %>
+          <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
+        </h5>
+      </div>
+    </div>
+
+    <% unless @plant.plant_images.empty? %>
+        <div class="row plant-images-container">
+          <div>(click image to <i class="fa fa-eye" aria-hidden="true"> </i> view full size)</div>
+          <% @plant.plant_images.each do |plant_image| %>
+              <div class="plant-image-view">
+                <%= link_to image_tag(plant_image.image_upload.url(:mid)), plant_image.image_upload.url, { :class => "galleried-elements", :title=> plant_image.get_display_title, :rel => "zomg_awesome_images" } %>
+              </div>
+          <% end %>
+        </div>
+    <% end %>
+
+    <div class="row plant-details-container">
+        <div class="planting-details-label">
+          <h5>Source and Planting Details</h5>
+          <p>
+            <%= form_for(@plant) do |f| %>
+              <%= f.label :acquired_date %><br>
+              <%= f.text_field :acquired_date,  placeholder: " unknown", :class => 'datepicker' %>
+              <%= f.submit 'Save date', :class => 'btn btn-primary' %>
+            <% end %>
+          </p>
+          <p id="source-activator">
+            Source:
+            <%= best_in_place @plant, :source, :place_holder => '(plant source not specified)', :activator => "#source-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
+          </p>
+          <p id="seed-activator">
+            Grown from seed?
+            <%= best_in_place @plant, :grown_from_seed, :as => 'checkbox', collection: {false: "Nah", true: "Yep"}, :activator => "#seed-activator", :place_holder => 'Nah' %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
+          </p>
+          <div class="pot-image">
+            <%= image_tag(@plant.pot_type_images[@plant.pot_type], :size => "50x50", :class => 'right-float-img') %>
+          </div>
+          <p id="pot-type-activator">
+            Pot Type:
+            <%= best_in_place @plant, :pot_type, :as => 'select', :collection => @plant.pot_types, :classes => 'pot_type_selector', :data => {:pot_type_url => @plant.pot_type_images[@plant.pot_type]}, :activator => "#pot-type-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
+          </p>
+          <p id="pot-size-activator">
+            Pot Size:
+            <%= best_in_place @plant, :pot_size, :as => 'select', :collection => @plant.pot_sizes, :activator => "#pot-size-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
+          </p>
+
+        </div>
+
+      <div class="plant-planning-label">
+        <h5>Planning and Actions</h5>
+        <p>
+          <%= form_for(@plant) do |f| %>
+              <%= f.label :planted_date %><br>
+              <%= f.text_field :planted_date,  placeholder: " unknown", :class => 'datepicker' %>
+              <%= f.submit 'Save date', :class => 'btn btn-primary' %>
+            <% end %>
+        </p>
+        <p>
+          <%= form_for(@plant) do |f| %>
+              <%= f.label :repotted_date %><br>
+              <%= f.text_field :repotted_date,  placeholder: " unknown", :class => 'datepicker' %>
+              <%= f.submit 'Save date', :class => 'btn btn-primary' %>
+            <% end %>
+        </p>
+        <p>
+          <%= form_for(@plant) do |f| %>
+              <%= f.label :next_repotting_date %><br>
+              <%= f.text_field :next_repotting_date,  placeholder: " unknown", :class => 'datepicker' %>
+              <%= f.submit 'Save date', :class => 'btn btn-primary' %>
+            <% end %>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="row plant-details-container">
+        <div class="plant-notes-label">
+          <h5>Care Notes</h5>
+          <p id="care-notes-activator" >
+            <%= best_in_place @plant, :care_notes, :as => 'textarea', :ok_button => 'Save', :cancel_button => 'Cancel', :place_holder => '(no care notes specified)', :activator => "#care-notes-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
+          </p>
+        </div>
+        <div class="plant-care-label">
+          <h5>Plant Notes</h5>
+          <p id="notes-activator">
+            <%= best_in_place @plant, :notes, :as => 'textarea', :ok_button => 'Save', :cancel_button => 'Cancel', :place_holder => '(no plant notes specified)', :activator => "#notes-activator" %>
+            <span class="in-place-edit-icon"><i class="fa fa-edit" aria-hidden="true"> </i></span>
+          </p>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="jen-plant-image-form-wrapper">
+      <%= form_for(@plant) do |f| %>
+          <br>
+          <h3>Add / Remove Plant Images</h3>
+          <div class="clearfix"></div>
+          <div class="links">
+            <%= link_to_add_association '<i class="fa fa-plus" aria-hidden="true"> </i> Add a new plant image'.html_safe, f, :plant_images, class: "btn btn-success" %>
+          </div>
+          <div class="clearfix"></div>
+          <br>
+
+          <div class="clearfix"></div>
+          <div id="images">
+            <% unless @plant.plant_images.empty? %>
+              <h5>Remove Existing Plant Images:</h5>
+            <% end %>
+            <%= f.fields_for :plant_images do |plant_image| %>
+                <%= render 'plant_image_fields', {f: plant_image} %>
+            <% end %>
+          </div>
+          <div class="clearfix"></div>
+          <div style="clear: both;">
+            <%= f.submit 'Save Plant Image Changes', :class => 'btn btn-primary' %>
+          </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

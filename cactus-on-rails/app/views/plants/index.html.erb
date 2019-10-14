@@ -1,0 +1,78 @@
+<section class="jumbotron text-xs-center">
+  <div class="container">
+    <%= image_tag("happy_cactus.jpg") %>
+    <p class="lead text-muted">Here is your Plant Collection!</p>
+    <p>
+      <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"> </i> Add New Plant'.html_safe, new_plant_path, class: "btn btn-info" %>
+      <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+    </p>
+  </div>
+</section>
+
+<div class="album text-muted">
+  <div class="container-jen">
+
+    <table id="plants">
+      <thead>
+        <th>Genus</th>
+        <th>Species</th>
+        <th>Common Name</th>
+        <th>Acquired</th>
+        <th>Planted</th>
+        <th>Repotted</th>
+        <th>Repotting Due</th>
+        <th>Pot Type</th>
+        <th>Images</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <% @plants.each do |plant| %>
+        <tr data-turbolinks="false">
+          <td>
+            <%= link_to plant do plant.genus end %>
+          </td>
+          <td>
+            <%= link_to plant do plant.species end %>
+          </td>
+          <td>
+            <%= link_to plant do plant.common_name end %>
+          </td>
+          <td>
+            <%= link_to plant do  plant.acquired_date ? plant.acquired_date.strftime("%Y-%m-%d") : ' unknown' end %>
+          </td>
+          <td>
+            <%= link_to plant do plant.planted_date ? plant.planted_date.strftime("%Y-%m-%d") : ' unknown' end %>
+          </td>
+          <td>
+            <%= link_to plant do plant.repotted_date ? plant.repotted_date.strftime("%Y-%m-%d") : ' unknown' end %>
+          </td>
+          <td>
+            <%= link_to plant do plant.next_repotting_date ? plant.next_repotting_date.strftime("%Y-%m-%d") : ' unknown' end %>
+          </td>
+          <td>
+            <%= link_to plant do image_tag(plant.pot_type_images[plant.pot_type], :size => "50x50") end %>
+          </td>
+          <td>
+            <% if plant.plant_images.empty? %>
+                <%=  'no images' %>
+            <% else %>
+              <% plant.plant_images.each_with_index do |plant_image, ix| %>
+                <% if ix < 1 && plant_image.image_upload && plant_image.image_upload.url(:thumb) %>
+                  <%= link_to plant do %>
+                    <%= image_tag(plant_image.image_upload.url(:thumb)) %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </td>
+          <td style="width: 300px;">
+            <%= link_to '<i class="fa fa-eye" aria-hidden="true"> </i> View / Edit'.html_safe, plant_path(plant), class: "btn btn-outline-primary" %>
+            <%= link_to '<i class="fa fa-remove" aria-hidden="true"> </i> Delete'.html_safe, plant, method: :delete, class: "btn btn-outline-danger" %>
+          </td>
+        </tr>
+        <% end %> 
+      </tbody>
+    </table>
+
+  </div>
+</div>
