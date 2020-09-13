@@ -13,6 +13,8 @@ Installation and deployment notes:
 
 * NodeJs required - use the NodeJs installer and restart machine, see https://nodejs.org/en/download/
 
+* Note application originally developed under Windows; most instructions related to Windows environment & not yet updated for Linux
+
 * Image manipulation requires the installation of ImageMagick, to enable CarrierWave to work.
 for windows see https://sourceforge.net/projects/imagemagick/files/latest/download?source=files
 During installation, ensure that path setting option and C libs options are selected. Install to C:\ImageMagick.
