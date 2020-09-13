@@ -41,4 +41,4 @@ Then all should work, as carrierwave is configured to use mini_magick for image 
 
 ![Cactus on Rails - view plant details](cactus-on-rails/app/assets/images/cactus_on_rails2.png)
 
-![Cactus on Rails - plant collection](cactus-on-rails/app/assets/images/cactus_on_rails4.png)
+![Cactus on Rails - plant collection](cactus-on-rails/app/assets/images/cactus_on_rails5.png)
