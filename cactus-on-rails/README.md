@@ -7,10 +7,9 @@ Installation and deployment notes:
 * Ruby 2.2 required, MySqlite3 required, built in Rails 5
 
 * Ruby / Rails installation - on windows use the Ruby Installer / Rails installer (will install git and mysqlite3 if required), see http://railsinstaller.org/en
+* or use your preferred OS-specific solution
 * then gem install bundler
 * then gem install rails
-
-* System dependencies - developed for windows
 
 * NodeJs required - use the NodeJs installer and restart machine, see https://nodejs.org/en/download/
 
@@ -30,5 +29,8 @@ Then all should work, as carrierwave is configured to use mini_magick for image 
 
 * Assets precompile - may be required to do rake assets:precompile for datatables images
 
-* Deployment instructions - on windows, run ruby bin/rails server and access at localhost:3000
+* Deployment instructions - rails server and access at localhost:3000
 
+* Demo app only; no auth, designed to run as single-machine local instance.
+
+![Cactus on Rails](app/assets/images/cactus_on_rails.png)
